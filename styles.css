@@ -21,20 +21,26 @@ header {
     background-color: rgba(255, 255, 255, 0.9);
 }
 
+.titlebar > img {
+    height: 20px;
+    padding-right: 15px;
+}
 
 .themes {
     display: flex;
     list-style: none;
-    padding: 10px 30px 10px 0;
+    padding: 0px 30px 10px 2px;
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 0 0 5px 0;
-
+    overflow-x: hidden;
 }
 
 .themes > li > a {
     text-decoration: none;
-    font-family: "inter";
-    margin: 10px;
+    font-family: 'Spectral';
+    color: #3073ba;
+    cursor: pointer;
+    margin: 0 10px 10px 10px;
 }
 
 main {
@@ -115,4 +121,7 @@ main {
     .themes {
         padding-left: 0px;
     }
+}
+li>a:hover {
+    text-decoration: underline;
 }

@@ -61,7 +61,6 @@ $.ajax({
             updateData(realData, article)
         })
         heatmapLayer.setData(realData);
-        console.log(realData)
     }
 });
 
@@ -120,3 +119,124 @@ const inRangeOfClick = (clickPos, lat, long) => {
 
     return (lat >= sLaMin && lat <= sLaMax && long >=sLnMin && long <= sLnMax)
 }
+
+$("#a").click((e) => {
+    e.preventDefault()
+    $(".feed").empty();
+
+    $.ajax({
+        url: "https://tributary.svvc.dev/api/downstream/reel", success: (res) => {
+            console.log(res)
+            let realData = {
+                max: 8,
+                data: []
+            }
+            res.map((article) => {
+                var el = `
+                <a class="article" href="` + article.url + `" target="_blank">
+                    <h2>` + article.title + `</h2>
+                    <h3>` + article.source + `</h3>
+                    <p>` + article.description + `</p>
+                </a>
+            `
+                const regex = /Inflation|inflation|economy|Economy|Trade|trade|Stock|NYSE|stocks/gm
+                const found = article.title.match(regex)
+                
+                if(found)
+                    $(".feed").append(el)
+                updateData(realData, article)
+            })
+            heatmapLayer.setData(realData);
+        }
+    });
+})
+
+$("#b").click((e) => {
+    e.preventDefault()
+    $(".feed").empty();
+
+    $.ajax({
+        url: "https://tributary.svvc.dev/api/downstream/reel", success: (res) => {
+            console.log(res)
+            let realData = {
+                max: 8,
+                data: []
+            }
+            res.map((article) => {
+                var el = `
+                <a class="article" href="` + article.url + `" target="_blank">
+                    <h2>` + article.title + `</h2>
+                    <h3>` + article.source + `</h3>
+                    <p>` + article.description + `</p>
+                </a>
+            `
+                const regex = /Bitcoin|Ethereum|bitcoin|ethereum|Defi|DeFi|Crypto|crypto|Galaxy|Apple|AMD|iOS|iPad|MacBook|Google/gm
+                const found = article.title.match(regex)
+                
+                if(found)
+                    $(".feed").append(el)
+                updateData(realData, article)
+            })
+            heatmapLayer.setData(realData);
+        }
+    });
+})
+
+$("#c").click((e) => {
+    e.preventDefault()
+    $(".feed").empty();
+
+    $.ajax({
+        url: "https://tributary.svvc.dev/api/downstream/reel", success: (res) => {
+            console.log(res)
+            let realData = {
+                max: 8,
+                data: []
+            }
+            res.map((article) => {
+                var el = `
+                <a class="article" href="` + article.url + `" target="_blank">
+                    <h2>` + article.title + `</h2>
+                    <h3>` + article.source + `</h3>
+                    <p>` + article.description + `</p>
+                </a>
+            `
+                
+                    $(".feed").append(el)
+                updateData(realData, article)
+            })
+            heatmapLayer.setData(realData);
+        }
+    });
+})
+
+$("#d").click((e) => {
+    e.preventDefault()
+    $(".feed").empty();
+
+    $.ajax({
+        url: "https://tributary.svvc.dev/api/downstream/reel", success: (res) => {
+            console.log(res)
+            let realData = {
+                max: 8,
+                data: []
+            }
+            res.map((article) => {
+                var el = `
+                <a class="article" href="` + article.url + `" target="_blank">
+                    <h2>` + article.title + `</h2>
+                    <h3>` + article.source + `</h3>
+                    <p>` + article.description + `</p>
+                </a>
+            `
+                const regex = /JWST|Meteor|Moon|moon|meteor|star |Supernova|Mars|Artemis|NASA/gm
+                const found = article.title.match(regex)
+                
+                if(found)
+                    $(".feed").append(el)
+                updateData(realData, article)
+            })
+            heatmapLayer.setData(realData);
+        }
+    });
+})
